@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE02E6761A76F94F00640A77 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE02E6751A76F94F00640A77 /* main.cpp */; };
+		BE68ABFF1A7C389E006EE767 /* space_object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BE68ABFD1A7C389E006EE767 /* space_object.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		BE02E6721A76F94F00640A77 /* class examples */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "class examples"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE02E6751A76F94F00640A77 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BE68ABFD1A7C389E006EE767 /* space_object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = space_object.cpp; sourceTree = "<group>"; };
+		BE68ABFE1A7C389E006EE767 /* space_object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = space_object.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				BE02E6751A76F94F00640A77 /* main.cpp */,
+				BE68ABFD1A7C389E006EE767 /* space_object.cpp */,
+				BE68ABFE1A7C389E006EE767 /* space_object.h */,
 			);
 			path = "class examples";
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE02E6761A76F94F00640A77 /* main.cpp in Sources */,
+				BE68ABFF1A7C389E006EE767 /* space_object.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +208,7 @@
 		BE02E67A1A76F94F00640A77 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +216,7 @@
 		BE02E67B1A76F94F00640A77 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -232,6 +240,7 @@
 				BE02E67B1A76F94F00640A77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
