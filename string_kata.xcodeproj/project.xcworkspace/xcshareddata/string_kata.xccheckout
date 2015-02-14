@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>948EAF68-2302-49B5-81C0-EF1FC511D833</string>
+	<key>IDESourceControlProjectName</key>
+	<string>string_kata</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DA3CA7F86CD5D170A5D30DFC32D26831985D4F8D</key>
+		<string>https://github.com/teknofire/CS372</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>string_kata/string_kata.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DA3CA7F86CD5D170A5D30DFC32D26831985D4F8D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/teknofire/CS372</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DA3CA7F86CD5D170A5D30DFC32D26831985D4F8D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DA3CA7F86CD5D170A5D30DFC32D26831985D4F8D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CS372</string>
+		</dict>
+	</array>
+</dict>
+</plist>
