@@ -1,0 +1,199 @@
+% Exercise #1
+% ----------------------
+%% Draws a one square inch box and inch in from the bottom left
+
+/inch {72 mul} def      % Convert inches->points (1/72 inch)
+
+newpath                 % Start a new path
+1 inch 1 inch moveto    % an inch in from the lower left
+2 inch 1 inch lineto    % bottom side
+2 inch 2 inch lineto    % right side
+1 inch 2 inch lineto    % top side
+%closepath               % Automatically add left side to close path
+stroke                  % Draw the box on the paper
+showpage                % We're done... eject the page
+
+% Exercise #2
+% ----------------------
+%% Example of rotation... draws 36 lines in a circular pattern
+
+0 10 360 {              % Go from 0 to 360 degrees in 10 degree steps
+  newpath               % Start a new path
+
+  gsave                 % Keep rotations temporary
+    144 144 moveto
+    dup                 % duplicate index on stack
+    rotate              % Rotate by degrees on stack from 'for'
+    2 div               % cut the length of the line in half
+    0 rlineto
+    stroke
+  grestore              % Get back the unrotated state
+
+} for                   % Iterate over angles
+
+showpage
+
+% Exercise #3
+% ----------------------
+% Draw a box at 72, 72 using translate
+
+% operator box: xcoord ycoord box -
+% Creates one inch box at xcoord, ycoord
+/box {
+   newpath
+   moveto
+   72 0 rlineto
+   0 72 rlineto
+   -72 0 rlineto
+   closepath
+} def
+
+gsave                           % Preserve the old coordinates
+  0 1 2 {
+    72 0 translate
+
+    gsave
+    0 1 2 {
+      0 72 translate               % Set origin to (72, 72)
+      0 0 box stroke                % Draw the box at the new origin
+    } for
+    grestore
+
+  } for
+grestore                        % Restore the old coordinates
+
+showpage
+
+% Exercise #4
+% ----------------------
+% Demonstrate shading and width in drawing lines and filling shapes
+
+% Define an operator box which builds a path for a one inch square box
+% Note that box does not draw or fill the box.
+
+/box {
+  newpath
+  moveto                                % Current point is on stack
+  0 72 rlineto                          % Left
+  72 0 rlineto                          % Top
+  0 -72 rlineto                         % Right
+  closepath                             % Bottom
+} def
+
+0 setgray                               % 100% black
+1 setlinewidth                          % One point thick lines
+72 72 moveto 72 144 lineto stroke       % Draw a one inch line
+
+gsave                                   % Save a copy of the current settings
+  0.5 setgray                           % 50% black
+  10 setlinewidth                       % 10 point wide lines
+  144 72 moveto 144 144 lineto stroke   % Draw a one inch wide line
+  216 72 box                            % Build a square path...
+  0.35 setgray                          %   make it a little darker...
+  fill                                  %   and fill it.
+  3 setlinewidth
+  216 72 box stroke
+grestore                                % Go back to the original settings
+
+3 setlinewidth                          % Make the box lines wider
+300 72 box stroke                       % Draw a black box
+showpage
+
+% Exercise #5
+% ----------------------
+% Demonstrate shading and width in drawing lines and filling shapes
+
+% Define an operator box which builds a path for a one inch square box
+% Note that box does not draw or fill the box.
+
+/cbox {
+  newpath
+  moveto                                % Current point is on stack
+  0 72 rlineto                          % Left
+  72 0 rlineto                          % Top
+  0 -72 rlineto                         % Right
+  closepath                             % Bottom
+} def
+
+0 setgray                               % 100% black
+1 setlinewidth                          % One point thick lines
+72 72 moveto 72 144 lineto stroke       % Draw a one inch line
+
+gsave                                   % Save a copy of the current settings
+  0.5 setgray                           % 50% black
+  10 setlinewidth                       % 10 point wide lines
+  144 72 moveto 144 144 lineto stroke   % Draw a one inch wide line
+  216 72 box                            % Build a square path...
+  0.35 setgray                          %   make it a little darker...
+  fill                                  %   and fill it.
+grestore                                % Go back to the original settings
+
+3 setlinewidth                          % Make the box lines wider
+300 72 translate
+0 30 90 {
+  gsave
+    36 36 translate
+    rotate
+    -36 -36 cbox stroke                       % Draw a black box
+  grestore
+} for
+
+showpage
+
+% Exercise #6
+% ----------------------
+% my own page of drawing!
+
+/eye {
+  gsave
+  translate
+  rotate
+  0 0 5 0 180 arc fill
+  0 0 5 0 180 arc stroke
+  grestore
+} def
+
+/mouth {
+  gsave
+    180 rotate
+    20 0 180 arc stroke
+  grestore
+} def
+
+/face {
+  135 -10 10 eye stroke
+  225 10 10 eye fill
+  0 0 mouth stroke
+} def
+
+/body {
+  newpath
+  moveto
+  20 72 rlineto
+  36 0 rlineto
+  20 -72 rlineto
+  closepath
+} def
+
+/skull {
+  newpath
+  0 0 30 0 360 arc
+} def
+
+/head {
+  gsave
+    translate
+    1 setgray
+    skull fill
+    0 setgray
+    skull stroke
+    face
+  grestore
+} def
+
+gsave
+  72 72 body fill
+  110 167 head
+grestore
+
+showpage
